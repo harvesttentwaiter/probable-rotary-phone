@@ -1,7 +1,7 @@
 
 def main():
 	print '<html><head><title>Numbers</title></head><body>'
-	print '<table>'
+	print '<table border=1 cellpadding=9>'
 	for i in range(1,100):
 		doNum(i)
 	print '</table>'
@@ -39,7 +39,7 @@ en_tens = [ 'twenty',
 	
 def doNum(num):
 	print ''
-	print '<tr><td>'
+	print '<tr><td width=90>'
 	print num
 	print '</td><td>'
 	if num < len(en_num): 
@@ -68,7 +68,9 @@ def doNum(num):
 	print '</table>'
 	print '</td><td>'
 	for j in range(num/5):
-		print '<img src=tally5.png />'
+		print '<img src=tally5.png />',
+		if j%4 == 4-1:
+			print '<br>'
 	for j in range(num%5):
 		print '<img src=tally1.png />'
 	
