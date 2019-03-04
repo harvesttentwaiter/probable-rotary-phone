@@ -1,0 +1,26 @@
+// http://wpad.department.branch.example.com/wpad.dat
+// mime-type application/x-ns-proxy-autoconfig (optional)
+// proxy.pac (optional)
+
+// mitmproxy // privoxy
+
+function FindProxyForURL(url, host)
+{
+   if (isPlainhost name(host) || dnsDomainIs(host, ".mydomain.com"))
+      return "DIRECT";
+
+   else if (dnsDomainIs(host, ".com"))
+      return "PROXY proxy1.mydomain.com:8080; " +
+           "PROXY proxy4.mydomain.com:8080";
+
+
+   // return "SOCKS host:port";
+
+   // firefox
+   // return "HTTPS host:port"; // and chrome // use stunnel
+   // return "SOCKS4 host:port";
+   // return "SOCKS5 host:port";
+
+   return "DIRECT";
+}
+
