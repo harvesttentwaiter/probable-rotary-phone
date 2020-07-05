@@ -8,6 +8,8 @@ use std::time::SystemTime;
  * 
  * loggy(line!(), String::from("hi"));
  * loggy(line!(), format!("tuple{:?}", (3,4)));
+ *
+ * crate::loggy::loggy(line!(), format!("hi")); // use direct
  */
 pub fn loggy(line :u32, msg :String) {
     // TODO move to diff dir, and diff module
